@@ -1,0 +1,15 @@
+- Exercises:
+1. Either stochastic gradient descent or mini-batch gradient descent as full batch gradient descent performs poorly with high numbers of features
+2. Features with very different scales will turn the cost function into an elongated bowl and thus Gradient Descent algorithms will take a long time to converge. Hence, Normalising all features to be on a similar scale is a solution. We can achieve this with the **normal equation**.
+3. No, as the cost function when using logistic regression is convex and thus the gradient descent algorithm will always converge to the global minimum
+4. If the optimisation problem is convex (such as in Linear/Logistic regression) and assuming that the learning rate is nnot too high, then all models will be very similar as they will all converge very close to the global minimum. However, in the case of stochastic and min-batch gradient descent, the learning rate will have to gradually be reduced in order to prevent the descent from bouncing around. 
+5. There are two possibilities: if training error is not going up and validation error tends to go up then it is likely that the model is overfitting to the training data. To fix this we can add more training data in order to make the model generalise better to the validation  data. Secondly if both training and validation errors go up at the same time it could indicate that you are using too high a learning rate and the algorithm is diverging. 
+6. No, because we are training in mini-batches which aren't necessarily indicative of the whole training data. Mini-batch/SGD are random in nature and thus patience should be given to ensure that the decrease in accuracy isn't a trend.
+7. SGD is the fastest, followed by mini-batch and then full batch. Full batch gradient descent will converge, but we can make both SGD and mini-batch converge by gradually reducing the learning rate. 
+8. Training data is likely overfitting. You can solve overfitting by: reducing the complexity of the model by reducing the polynomial degree, you can slo regularize the data and finally you can increase amount of training data
+9. It would indicate high bias and underfitting. To fix this you could reduce the regularization hyperparameter. 
+10. 
+a: A model with some regularization typically performs better than a model with no regularization so it is recommended to use ridge regression over linear regression
+b: if you suspect that there only a few features od the data that really matter it is recommended to use lasso regularization regression s it will then push all of the irrelevant features' weights to 0
+c:  Elastic net is generally preferred over lasso regression as lasso regression sometimes performs erratically. 
+11. You should use two logistic regression classifiers as all four classes are exclusive and thus all combinations between them are possible. 
