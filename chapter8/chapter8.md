@@ -1,0 +1,9 @@
+# Questions
+1. In order to speed training up and make data visualisations possible where a dataset has many more than 3 features. Main drawbacks include data loss, Can be computationally intensive, makes ml pipeline more complex
+2. The curse of dimensionality refers to the fact that many problems that do no eixst in low-dimension spaces arise in high-dimension space. One common problem with high-dimensional spaces is that randomly sampled high-dimensional vectors are generally very sparse meaning that the risk of overfitting is high and thus a lot of data is needed in order to identify real patterns that generalise well.
+3. It is almost always impossible to **perfectly** reverse the dimensionality reduction as information is lost in the process. 
+4. PCA can be used to reduce dimensionality even in highly non-linear datasets as it can remove useless dimensions. However, if there are no useless dimensions (such as in a swiss roll dataset) then it cannot remove unnecessary dimensions as there are none and as a result it will remove useful layers, losing too much information.
+5. It depends on the dataset. If there is a dataset with 1000 features but has points such that they are perfectly aligned then it can reduce dimensionality down to 1. And vice versa if there is a lot of variation on many different axes.
+6. Regular PCA is used by default (but only if the dataset fits in memory), Incremental PCA is used for large datasets that don't fit in memory. Randomised PCA is used when you want to considerably remove dimensionality and dataset fits in memory.  Kernel PCA is useful for nonlinear datasets.
+7. Dimensionality reduction can be evaluated on how many dimensions it can remove whilst maintaining some level of loss. 
+8. Yes, for example using regular PCA as a quick once over to reduce useless dimensions and then applying a slower algorithm to find dimensions that aren't useless but can be sacrificed, such as LLE. 
